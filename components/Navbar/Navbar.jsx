@@ -1,0 +1,52 @@
+import { NavLink } from "react-router-dom";
+import s from "./Navbar.module.css";
+const Navbar = () => {
+  return (
+    <nav className={s.nav}>
+      <div>
+        <NavLink
+          to="/profile"
+          //   Функция для определения стиля элемента в зависимости от того, выбран он или нет.
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Profile
+        </NavLink>{" "}
+        {/*Позволяет использовать ссылку без перезагрузки страницы */}
+      </div>
+      <div className={` ${s.item} ${s.active}`}>
+        <NavLink
+          to="/dialogs"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Messages
+        </NavLink>
+      </div>
+      <div className={s.item}>
+        <NavLink
+          to="/news"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          News
+        </NavLink>
+      </div>
+      <div className={s.item}>
+        <NavLink
+          to="/music"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Music
+        </NavLink>
+      </div>
+      <div className={s.item}>
+        {/* Позволяет обращаться к стилю элемента как к объекту. Это дает возможность давать одинаковые имена разным элементам и не пересекаться. */}
+        <NavLink
+          to="/settings"
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+        >
+          Settings
+        </NavLink>
+      </div>
+    </nav>
+  );
+};
+export default Navbar;
