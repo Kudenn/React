@@ -1,0 +1,10 @@
+.lotr {
+  width: 1000px;
+  height: 400px;
+}
+.item {
+    color: greenyellow;
+}
+.descriptionBlock {
+  padding: 10px;
+}
